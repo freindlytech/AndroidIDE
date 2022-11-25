@@ -85,8 +85,8 @@ class MainFragment : BaseFragment(), OnProjectCreatedListener {
   }
 
   private fun cloneGitRepo() {
-    val cloneGitTask = CloneGitTask(this)
-    cloneGitTask.cloneRepo();
+    val cloneGitTask = CloneGitTask(requireActivity())
+    cloneGitTask.cloneRepo()
   }
 
   private fun gotoPreferences() {
