@@ -32,22 +32,6 @@ jobs:
         with:
           arguments: assembledebug
 
-      - name: Run tests
-        uses: eskatos/gradle-command-action@v2
-        with:
-          arguments: test
-
-      - name: Generate translation report
-        uses: eskatos/gradle-command-action@v2
-        with:
-          arguments: :app:checkTranslations
-
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: always()
-        with:
-          files: "./**/build/test-results/**/*.xml"
-
       - name: Upload APK
         uses: actions/upload-artifact@v3
         if: ${{ !github.head_ref }}
@@ -55,9 +39,4 @@ jobs:
           name: apk-debug
           path: app/build/outputs/apk/debug/app-debug.apk
 
-      - name: Upload translation report
-        uses: actions/upload-artifact@v3
-        if: ${{ !github.head_ref }}
-        with:
-          name: translation-report
-          path: build/translation-reports/
+   
