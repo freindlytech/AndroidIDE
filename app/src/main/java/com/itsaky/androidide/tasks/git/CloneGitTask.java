@@ -148,7 +148,7 @@ public class CloneGitTask {
 		alertDialog = materialAlertDialogBuilder.show();
 	}
 
-	private String run(String url) throws IOException {
+	public String run(String url) throws IOException {
 
 		try {
 			String urlRepo = textInputEditText.getText().toString();
