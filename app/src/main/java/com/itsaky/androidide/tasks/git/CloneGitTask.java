@@ -45,7 +45,7 @@ public class CloneGitTask {
 	public void cloneRepo() {
 		//custom layout
 		LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		view = inflater.inflate(R.layout.activity_main, null);
+		view = inflater.inflate(R.layout.git_dialog_layout, null);
 
 		textInputLayout = view.findViewById(R.id.textInputRepo);
 		textInputEditText = view.findViewById(R.id.textRepo);
@@ -65,7 +65,7 @@ public class CloneGitTask {
 
 				//materialprogress dialog
 				LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-				view = inflater.inflate(R.layout.layout_progress, null);
+				view = inflater.inflate(R.layout.git_dialog_progress, null);
 
 				MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(activity);
 				materialAlertDialogBuilder.setTitle(activity.getString(R.string.cloning_repository));
