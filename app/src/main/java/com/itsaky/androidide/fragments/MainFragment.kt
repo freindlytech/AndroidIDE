@@ -37,8 +37,13 @@ class MainFragment : BaseFragment(), OnProjectCreatedListener {
       MainScreenAction(string.create_project, R.drawable.ic_add) { showCreateProject() }
     val openProject =
       MainScreenAction(string.msg_open_existing_project, R.drawable.ic_folder) { pickDirectory() }
+  /*  val cloneGitRepository =
+      MainScreenAction(string.clone_git_repository, R.drawable.ic_git) { cloneGitRepo() }*/
     val cloneGitRepository =
-      MainScreenAction(string.clone_git_repository, R.drawable.ic_git) { cloneGitRepo() }
+      MainScreenAction(string.clone_git_repository, R.drawable.ic_git) {
+      val cloneGitTask = CloneGitTask(requireActivity())
+      cloneGitTask.cloneRepo()
+      }
     val openTerminal =
       MainScreenAction(string.btn_terminal, R.drawable.ic_terminal) {
         startActivity(Intent(requireActivity(), TerminalActivity::class.java))
@@ -84,10 +89,10 @@ class MainFragment : BaseFragment(), OnProjectCreatedListener {
     startActivity(Intent(requireActivity(), EditorActivity::class.java))
   }
 
-  private fun cloneGitRepo() {
+ /* private fun cloneGitRepo() {
     val cloneGitTask = CloneGitTask(requireActivity())
     cloneGitTask.cloneRepo()
-  }
+  }*/
 
   private fun gotoPreferences() {
     startActivity(Intent(requireActivity(), PreferencesActivity::class.java))
