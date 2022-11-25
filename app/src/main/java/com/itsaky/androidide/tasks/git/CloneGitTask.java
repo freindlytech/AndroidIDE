@@ -38,7 +38,7 @@ public class CloneGitTask {
 	View view;
 	AlertDialog progressDialog;
 
-	CloneGitTask(Activity mActivity) {
+	public CloneGitTask(Activity mActivity) {
 		activity = mActivity;
 	}
 
